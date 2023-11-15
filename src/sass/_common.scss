@@ -17,6 +17,7 @@ body {
 }
 .cat-info {
   display: flex;
+  flex-direction: row;
   align-items: start;
   width: 60%;
 }
