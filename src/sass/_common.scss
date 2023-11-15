@@ -15,44 +15,116 @@ body {
     min-height: 100vh;
     padding: 20px;
 }
-
-.breed-select {
-    font: inherit;
-    padding: 8px;
-    width: 320px;
-    margin-bottom: 16px;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    border: 3px solid rgba(255, 255, 0, 0.5);
-    border-radius: 3px;
-    background-color: rgba(30, 144, 255, 0.3);
+.cat-info {
+  display: flex;
+  align-items: start;
+  width: 60%;
 }
 
-.breed-select {
-    outline: none;
-    border: 3px solid rgba(255, 255, 0, 0.9);
+.loader {
+  height: 250px;
+  width: 50px;
+  margin: auto;
+  position: absolute;
+  top: -500px;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
-/*
-ul {
-  list-style: none;
+.loader:before,
+.loader:after {
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
 }
 
-h1 {
-  font-size: 40px;
+.loader:before {
+  animation: ball1 1s infinite;
+  background-color: #000;
+  box-shadow: 50px 0 0 #ff00fb;
+  margin-bottom: 30px;
 }
 
-p {
-  font-size: 22px;
-  font-weight: 500;
+.loader:after {
+  animation: ball2 1s infinite;
+  box-shadow: 50px 0 0 #ff00fb;
+    box-shadow: 30px 0 0 #000;
 }
 
-img {
-  margin-right: 10px;
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(0.8);
+  }
+
+  50% {
+    transform: rotate(360deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(720deg) scale(0.8);
+  }
 }
 
-li {
-  font-size: 18px;
-  font-weight: 500;
-}*/
+@keyframes ball1 {
+  0% {
+    box-shadow: 30px 0 0 #ff00b7;
+  }
+
+  50% {
+    box-shadow: 0 0 0 #ff009d;
+    margin-bottom: 0;
+    transform: translate(15px, 15px);
+  }
+
+  100% {
+    box-shadow: 30px 0 0 #ff00bb;
+    margin-bottom: 10px;
+  }
+}
+
+@keyframes ball2 {
+  0% {
+    box-shadow: 30px 0 0 #000;
+  }
+
+  50% {
+    box-shadow: 0 0 0 #000;
+    margin-top: -20px;
+    transform: translate(15px, 15px);
+  }
+
+  100% {
+    box-shadow: 30px 0 0 #000;
+    margin-top: 0;
+  }
+}
+
+.img-loader {
+  width: 100px;
+  height: 100px;
+  border: 15px solid #000;
+  border-bottom-color: #ff007b;
+  border-radius: 50%;
+  display: none;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: auto;
+  position: absolute;
+  top: -70%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
